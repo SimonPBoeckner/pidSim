@@ -18,3 +18,6 @@ while True:
 
     end = time.perf_counter()
     dt = end - start
+    if time.time() - offset > 30:
+        plotter.save_plot()
+        break

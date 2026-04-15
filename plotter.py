@@ -49,14 +49,14 @@ class Plotter():
         plt.grid()
         for j in self.line_cache.values():
             self.ax.plot(j.x_points, j.y_points)
-            # plt.annotate(
-            #     f'kP: {controller.kP}, kI: {controller.kI}, kD: {controller.kD}', 
-            #     (controller.path.x_points[int(len(controller.path.x_points)/2)], 
-            #     controller.path.y_points[int(len(controller.path.y_points)/2)]),
-            #     textcoords="offset points",
-            #     xytext=(0, -15),
-            #     ha='center'
-            # )
+            plt.annotate(
+                f'kP: {controller.kP}, kI: {controller.kI}, kD: {controller.kD}',
+                (j.x_points[0],
+                j.y_points[0]),
+                textcoords="offset points",
+                xytext=(20, 10),
+                ha='center'
+            )
         plt.pause(0.001)
 
     def start(self) -> None:
